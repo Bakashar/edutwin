@@ -15,9 +15,10 @@ const ALEM_BASE  = (import.meta.env.VITE_ALEMLLM_API_BASE || "").replace(/\/chat
 const ALEM_KEY   = import.meta.env.VITE_ALEMLLM_API_KEY   || "";
 const ALEM_MODEL = import.meta.env.VITE_ALEMLLM_MODEL      || "alem-llm-247b";
 
-// ── 3. Redis + MinIO — через локальный backend-сервер (redis-api/server.js) ───
-//    Запускается: cd redis-api && node server.js  → слушает :4000
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+// ── 3. Redis + MinIO ──────────────────────────────────────────────────────────
+//    Локально: VITE_BACKEND_URL=http://localhost:4000 (запусти redis-api/server.js)
+//    Vercel:   VITE_BACKEND_URL="" → автоматически использует /api (serverless functions)
+const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || "").replace(/\/$/, "") || "/api";
 
 // ── 4. NocoDB — no-code аналитика ────────────────────────────────────────────
 const NOCODB_URL      = import.meta.env.VITE_NOCODB_URL      || "";
