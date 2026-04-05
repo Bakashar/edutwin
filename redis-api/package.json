@@ -1,0 +1,15 @@
+{
+  "name": "edutwin-backend",
+  "version": "1.0.0",
+  "description": "EduTwin.kz backend: Redis cache + MinIO storage",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "ioredis": "^5.10.1",
+    "minio": "^8.0.7"
+  }
+}

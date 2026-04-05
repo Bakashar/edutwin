@@ -1,0 +1,37 @@
+# ════════════════════════════════════════════════════════════════
+# EduTwin.kz — переменные среды
+# Скопируй в .env и заполни своими ключами
+# ════════════════════════════════════════════════════════════════
+
+# ── 1. QWEN3 (основной LLM) ──────────────────────────────────
+# Важно: только BASE URL без /chat/completions
+VITE_QWEN_API_BASE="https://llm.alem.ai/v1"
+VITE_QWEN_API_KEY="sk-6YXtbdZW-DvqNtBW0RDzHw"
+VITE_QWEN_MODEL="qwen3-235b-a22b"
+
+# ── 2. ALEMLLM (казахский язык) ───────────────────────────────
+VITE_ALEMLLM_API_BASE="https://llm.alem.ai/v1"
+VITE_ALEMLLM_API_KEY="sk-mvqEv6sMjFY463ffpIMurA"
+VITE_ALEMLLM_MODEL="alem-llm-247b"
+
+# ── 3+4. REDIS + MINIO через локальный backend ────────────────
+# Запусти: cd redis-api && node server.js
+# Сервер слушает на :4000 и подключается к реальному Redis + MinIO
+VITE_BACKEND_URL="http://localhost:4000"
+
+# ── 5. NOCODB (no-code аналитика прогресса) ──────────────────
+VITE_NOCODB_URL="https://a1-nocodb-baga-agroflowdb.dedicatedapp.alem.ai"
+VITE_NOCODB_TOKEN="F61pbtjzzy8FAprqkJ0Jk9qC1fsEaX_in9ctsDey"
+VITE_NOCODB_TABLE_ID="vwegxd7ngwb65xwv"
+
+# ── 6. FORMBRICKS (обратная связь) ────────────────────────────
+VITE_FORMBRICKS_API_URL="https://app.formbricks.com/api/v1"
+VITE_FORMBRICKS_API_KEY="5b1eddc3e768dcbd3de40371a7790f68"
+VITE_FORMBRICKS_SURVEY_ID="cmnisypri000cqxfdenye45wv"
+VITE_FORMBRICKS_ENVIRONMENT="cmnisqywo0006qxfd4n6gq8mr"
+
+# ── 7. MINIO bucket (имя совпадает с server.js) ───────────────
+VITE_MINIO_BUCKET="aleemstudenttwin"
+
+# ── APP ──────────────────────────────────────────────────────
+VITE_APP_URL="http://localhost:3000"
